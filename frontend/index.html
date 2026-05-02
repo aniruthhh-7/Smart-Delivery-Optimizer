@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Delivery Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="container">
+        <header>
+            <h1>Smart Delivery Optimizer</h1>
+            <p>Finding the absolute fastest delivery route so you can finish your shift early!</p>
+        </header>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Number of Stops:</label>
+                <div class="select-wrapper">
+                    <select id="nodeCount">
+                        <option value="4">4 Stops (Watch it think)</option>
+                        <option value="5" selected>5 Stops (Watch it think)</option>
+                        <option value="6">6 Stops (Watch it think)</option>
+                        <option value="7">7 Stops (Watch it think)</option>
+                        <option value="8">8 Stops (Watch it think)</option>
+                        <option value="9">9 Stops (Instant Answer)</option>
+                        <option value="10">10 Stops (Instant Answer)</option>
+                        <option value="11">11 Stops (Instant Answer)</option>
+                        <option value="12">12 Stops (Instant Answer)</option>
+                    </select>
+                </div>
+            </div>
+            <button id="btnGenerate" class="btn">Get New Deliveries</button>
+            <button id="btnRun" class="btn btn-primary" disabled>Find Fastest Route</button>
+        </div>
+
+        <div class="info-bar">
+            <span><strong>How it works:</strong> The brain skips long/bad routes instantly to find the shortest total driving distance. <em>("A" is your starting Warehouse)</em></span>
+            <span><strong>Map Scale:</strong> 1 pixel dot on map = 1 km of driving</span>
+        </div>
+
+        <main>
+            <div class="card canvas-card">
+                <canvas id="tspCanvas" width="650" height="400"></canvas>
+                <div id="bestRouteDisplay" class="best-route-display">
+                    Step-by-Step Delivery Route: Waiting for you to start...
+                </div>
+            </div>
+            <div class="card logs-card">
+                <div class="logs-header">
+                    <h3>How the GPS Brain is thinking...</h3>
+                </div>
+                <div id="logs" class="logs"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
