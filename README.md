@@ -1,4 +1,4 @@
-# Smart Delivery Optimizer
+# Quantum Route Navigator
 
 This project is a simple, visual web application designed to show how a computer can figure out the fastest route for a sequence of delivery stops. It is built to be easily understood without any deep mathematical or programming knowledge.
 
